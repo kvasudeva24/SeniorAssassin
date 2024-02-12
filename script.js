@@ -8,8 +8,8 @@ class Node {
   toString() {
     return this.name +
       "\n " + this.number +
-      "\n Target: " + this.next +
-      "\n Hunter: " + this.prev;
+      "\n Target: " + (this.next ? this.next.name : "null") +
+      "\n Hunter: " + (this.prev ? this.prev.name : "null");
   }
 }
 
@@ -91,26 +91,5 @@ class DoublyList {
   }
 }
 
-
-const p1 = new Node("Kartik", 8477369877);
-const p2 = new Node("Anthony", 12345677);
-const p3 = new Node("Kai", 98585858);
-const p4 = new Node("Skurra", 5757558585);
-
-/* thru debugging i have figured out getSize, remove, append, and toString, all serve their purpose
-but when I wanna look at p1 after initializing the list it throws me a 
-"Maximum call stack size exceeded error" but i do not understand how to fix or why */
-
-console.log(p1.toString());
-
-
-
-const game = new DoublyList();
-game.append(p1);
-game.append(p2);
-game.append(p3);
-game.append(p4);
-
-/* if i wanna call line 104 here it throws me an error */
-
+// thru debugging i have figured out getSize, remove, append, and toString, all serve their purpose 
 
