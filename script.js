@@ -1,82 +1,116 @@
-class Node{
-  constructor(name, number){
+class Node {
+  constructor(name, number) {
     this.name = name;
     this.number = number
     this.next = null;
     this.prev = null;
   }
-  toString(){
-    return this.name + 
-    "\n " + this.number+ 
-    "\n Target: " + this.next +
-    "\n Hunter: " + this.prev;
+  toString() {
+    return this.name +
+      "\n " + this.number +
+      "\n Target: " + this.next +
+      "\n Hunter: " + this.prev;
   }
 }
 
-class DoublyLinkedList{
-  constructor(){
+/* test commands worked
+node class works as intended 
+*/
+
+class DoublyList {
+
+  constructor() {
     this.head = null;
     this.tail = null;
-    this.length = 0;
+    this.size = 0;
   }
 
-  append(node){
-    if(this.head == null){
+  append(node) {
+    if (!this.head) {
       this.head = node;
-    }
-    else{
-      let current = this.head;
-      while(current.next != null){
-        current = current.next;
-      }
       this.tail = node;
-      current.next = node;
-      node.prev = current;
-      node.next = this.head;
-      this.head.prev = this.tail;
     }
-    this.length++;
+    else {
+      node.prev = this.tail;
+      this.tail.next = node;
+      this.tail = node;
+    }
+    this.size++;
   }
 
-  removeByName(name){
-    if(this.head.name == name){
-      this.head = this.head.next;
-      this.head.prev = this.tail;
-      this.tail.next = this.head;
-    }
-    else if(this.tail.name == name){
-      this.tail.prev = this.tail;
-      this.tail.next = this.head;
-      this.head.prev = this.tail;
-    }
-    else{
-      let current = this.head;
-      while(current.next.name != name){
-        current = current.next;
-      }
-      current.next = current.next.next;
-      current.next.prev = current;
-    }
-    this.length--;
-  }
-
-  toString(){
-    let current = this.head;
-    let string = this.head.name + " --> ";
-    while(current.next != this.head){
-      string += current.name + " --> ";
-      current = current.next;
-    }
+  getSize() {
+    let string = "Size: "
+    string += this.size;
     return string;
   }
-  
+
+  remove(name) {
+    let current = this.head;
+    while (current !== null) {
+      if (current.name === name) {
+        if (current === this.head) {
+          this.head = current.next;
+          break
+        }
+        if (current.next === null) {
+          current.prev.next = null;
+          this.tail = current;
+        }
+        else {
+          current.prev.next = current.next;
+          current.next.prev = current.prev;
+        }
+      }
+      current = current.next
+    }
+    this.size--;
+  }
+
+
+  toString() {
+    let display = "";
+    let current = this.head;
+    while (current !== null) {
+      display += current.name;
+      if (current.next !== null) {
+        display += " --> ";
+      }
+      current = current.next;
+    }
+    return display;
+  }
+
+  getInfo(name) {
+    let current = this.head;
+    while (current !== null) {
+      if (current.name === name) {
+        return current.toString();
+      }
+      current = current.next
+    }
+  }
 }
 
-const game = new DoublyLinkedList();
-const x = new Node("X", 1);
-const y = new Node("Y", 2);
-const z = new Node("Z", 3);
-game.append(x);
-game.append(y);
-game.append(z);
-console.log(game.toString());
+
+const p1 = new Node("Kartik", 8477369877);
+const p2 = new Node("Anthony", 12345677);
+const p3 = new Node("Kai", 98585858);
+const p4 = new Node("Skurra", 5757558585);
+
+/* thru debugging i have figured out getSize, remove, append, and toString, all serve their purpose
+but when I wanna look at p1 after initializing the list it throws me a 
+"Maximum call stack size exceeded error" but i do not understand how to fix or why */
+
+console.log(p1.toString());
+
+
+
+const game = new DoublyList();
+game.append(p1);
+game.append(p2);
+game.append(p3);
+game.append(p4);
+
+/* if i wanna call line 104 here it throws me an error */
+
+
