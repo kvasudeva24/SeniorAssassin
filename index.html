@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Senior Assassin</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div class="header-container">
+    <h1>Senior Assassin</h1>
+  </div>
+  <div class="body-container">
+    <p>Enter Password</p>
+  </div>
+  <div class="password">
+    <input type="password" id="passInput" placeholder="Password">
+    <button id="passBtn" onclick="password()">Go</button>
+  </div>
+  <script>
+    function password() {
+      let password = "Admin!";
+      let guess = document.getElementById("passInput").value;
+      if (guess === password) {
+        window.location.href = "admin.html";
+      }
+      else {
+        alert("Incorrect Password. Please Try Again");
+      }
+    }
+  </script>
+</body>
+
+</html>
