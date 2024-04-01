@@ -1,0 +1,29 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .header-container{
+    background-color: whitesmoke;
+  }
+  
+  .header-container h1{
+    color: cornflowerblue;
+    text-align: center;
+  }
+  
+  
+  .body-container{
+    margin-top: 200px;
+  }
+  
+  .body-container p{
+    text-align: center;
+  }
+  
+  .password {
+      text-align: center; 
+  }
+  
+  
+  
