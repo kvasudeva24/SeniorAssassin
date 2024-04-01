@@ -1,0 +1,74 @@
+html {
+  height: 100%;
+  width: 100%;
+  background-image: url('background.png');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  overflow-x: hidden;
+}
+
+
+.header-container h1{
+  text-align:center;
+  font-size: 30px;
+}
+
+.container {
+  text-align: center;
+}
+
+.container p{
+  font-size: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.container textarea {
+  width: 75px; /* Adjust the width as needed */
+  height: 25px; /* Adjust the height as needed */
+  font-size: 20px;
+  text-align: center;
+}
+
+.removeContainer{
+  text-align: center;
+  margin-top: 50px;
+}
+
+.getInfoContainer{
+  text-align: center;
+  margin-top: 50px;
+}
+
+.getInfoText{
+  margin-top: 30px;
+  text-align: center;
+}
+
+.getInfoText textarea{
+  width: 225px;
+  height: 125px;
+  font-size: 10px;
+  text-align: center;
+}
+
+.viewLst{
+  margin-top: 20px;
+  text-align:center;
+}
+
+.viewListText{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.viewListText textarea{
+  width: 750px;
+  height: 175px;
+  font-size: 8px;
+  text-align: center;
+}
