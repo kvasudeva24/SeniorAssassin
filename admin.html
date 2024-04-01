@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Page</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <div class="header-container">
+    <h1>Admin Page</h1>
+  </div>
+  <div class = "container">
+    <p class = "label">Size: </p>
+    <textarea placeholder="" id="sizeOutput" readonly></textarea>
+  </div>  
+  <script>
+    function lookUp(){
+      window.open("https://docs.google.com/spreadsheets/d/1YMBm7qMbWZ5ASAI_H894NUW3iNRHHYVNaBzFiINZkqk/edit#gid=197799179", "_blank");
+    }
+  </script>
+  <div class = "removeContainer">
+    <input id = "removeInput" type = "string" placeholder="Name">
+    <button id = "removeBtn" onclick="remove()">Remove</button>
+    <button id = "lookUpBtn" onclick="lookUp()"> Look Up </button>
+  </div>
+  <div class = "getInfoContainer">
+    <input id = "getInfoInput" type = "string" placeholder="Name">
+    <button id = "getInfo" onclick="getInfo()">Get Info</button>
+    <button id = "mostKillsBtn" onclick ="mostKills()">Most Kills</button>
+    <button id = "leastKillsBtn" onclick="leastKills()">Least Kills</button> 
+    <button id = "clearBtn" onclick = "clearOutput()">Clear</button>
+    </div>
+  <div class = "getInfoText">
+    <textarea placeholder="" id = "getInfoOutput" readonly></textarea>
+  </div>
+  <div class = "viewLst">
+    <button id = "viewListBtn" onclick = "viewList()">View List</button>
+    <button id = randomizeBtn onclick = "randomizeList()">Randomize</button>
+    <button id = "clearListBtn" onclick = "clearList()">Clear</button>
+  </div>
+  <div class = "viewListText">
+    <textarea placeholder="" id = "viewListOutput"readonly></textarea>
+  </div>
+</body>
+
+</html>
